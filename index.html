@@ -73,7 +73,7 @@
   </style>
 </head>
 <body>
-  <header>📋 Absensi Mini - XI.A</header>
+  <header>📋 Absensi - Kelas</header>
 
   <main>
     <label for="nama">Nama:</label>
@@ -85,6 +85,7 @@
         <tr>
           <th>No</th>
           <th>Nama</th>
+          <th>kelas</th>
           <th>Waktu Hadir</th>
         </tr>
       </thead>
@@ -93,7 +94,7 @@
     </table>
   </main>
 
-  <footer>✨Dibuat oleh Fany Maulidia✨</footer>
+  <footer>✨BY FANISH PROJECT✨</footer>
 
   <script>
     let nomor = 1;
@@ -110,7 +111,8 @@
       const barisBaru = tabel.insertRow();
       const kolomNo = barisBaru.insertCell(0);
       const kolomNama = barisBaru.insertCell(1);
-      const kolomWaktu = barisBaru.insertCell(2);
+      const kolomKelas = barisBaru.insertCell(2);
+      const kolomWaktu = barisBaru.insertCell(3);
 
       const waktu = new Date();
       const jam = waktu.getHours().toString().padStart(2, "0");
@@ -118,6 +120,7 @@
 
       kolomNo.textContent = nomor++;
       kolomNama.textContent = nama;
+      kolomKelas.textContent = kelas;
       kolomWaktu.textContent = jam + ":" + menit;
 
       namaInput.value = "";
