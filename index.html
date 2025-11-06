@@ -78,6 +78,7 @@
   <main>
     <label for="nama">Nama:</label>
     <input type="text" id="nama" placeholder="Masukkan nama siswa..." />
+    <input type="text" id="kelas" placeholder="Masukkan kelas..." />
     <button onclick="tambahData()">Tambah</button>
 
     <table id="tabelAbsensi">
@@ -105,6 +106,16 @@
       if (nama === "") {
         alert("Masukkan nama terlebih dahulu!");
         return;
+        
+   let nomor = 2;
+        
+   function tambahData() {
+      const kelasInput = document.getElementById("kelas");
+      const kelas = kelasInput.value.trim();
+      if (kelas === "") {
+        alert("Masukkan kelas terlebih dahulu!");
+        return;
+        
       }
 
       const tabel = document.getElementById("tabelAbsensi").getElementsByTagName("tbody")[0];
