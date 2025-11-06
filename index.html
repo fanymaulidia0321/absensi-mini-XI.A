@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Absensi Mini - XI.A</title>
+  <title>Absensi Informatika - XI.A</title>
   <style>
     body {
       font-family: "Poppins", sans-serif;
@@ -73,12 +73,11 @@
   </style>
 </head>
 <body>
-  <header>📋 Absensi - Kelas</header>
+  <header>📋 Absensi Informatika - XI.A</header>
 
   <main>
     <label for="nama">Nama:</label>
     <input type="text" id="nama" placeholder="Masukkan nama siswa..." />
-    <input type="text" id="kelas" placeholder="Masukkan kelas..." />
     <button onclick="tambahData()">Tambah</button>
 
     <table id="tabelAbsensi">
@@ -86,7 +85,6 @@
         <tr>
           <th>No</th>
           <th>Nama</th>
-          <th>kelas</th>
           <th>Waktu Hadir</th>
         </tr>
       </thead>
@@ -95,7 +93,7 @@
     </table>
   </main>
 
-  <footer>✨BY FANISH PROJECT✨</footer>
+  <footer>✨ BY FANISH PROJECT ✨</footer>
 
   <script>
     let nomor = 1;
@@ -106,24 +104,13 @@
       if (nama === "") {
         alert("Masukkan nama terlebih dahulu!");
         return;
-        
-   let nomor = 2;
-        
-   function tambahData() {
-      const kelasInput = document.getElementById("kelas");
-      const kelas = kelasInput.value.trim();
-      if (kelas === "") {
-        alert("Masukkan kelas terlebih dahulu!");
-        return;
-        
       }
 
       const tabel = document.getElementById("tabelAbsensi").getElementsByTagName("tbody")[0];
       const barisBaru = tabel.insertRow();
       const kolomNo = barisBaru.insertCell(0);
       const kolomNama = barisBaru.insertCell(1);
-      const kolomKelas = barisBaru.insertCell(2);
-      const kolomWaktu = barisBaru.insertCell(3);
+      const kolomWaktu = barisBaru.insertCell(2);
 
       const waktu = new Date();
       const jam = waktu.getHours().toString().padStart(2, "0");
@@ -131,7 +118,6 @@
 
       kolomNo.textContent = nomor++;
       kolomNama.textContent = nama;
-      kolomKelas.textContent = kelas;
       kolomWaktu.textContent = jam + ":" + menit;
 
       namaInput.value = "";
